@@ -1,0 +1,7 @@
+<h2>Verify your identity</h2>
+
+<%= form_with url: verify_mfa_path, method: :post do %>
+  <%= label_tag :otp, 'Enter the OTP sent to your email' %>
+  <%= text_field_tag :otp %>
+  <%= submit_tag 'Verify' %>
+<% end %>
