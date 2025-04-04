@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root to: "rails/welcome#index"
 
   resources :customers, only: [] do
     post :import_csv, on: :collection

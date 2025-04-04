@@ -1,7 +1,11 @@
 <h2>Verify your identity</h2>
 
-<%= form_with url: verify_mfa_path, method: :post do %>
+<%= form_with url: verify_mfa_path, method: :post, local: true do %>
   <%= label_tag :otp, 'Enter the OTP sent to your email' %>
   <%= text_field_tag :otp %>
+
+  <%= check_box_tag :remember_device %>
+  <%= label_tag :remember_device, "Remember this device for 30 days" %>
+
   <%= submit_tag 'Verify' %>
 <% end %>
