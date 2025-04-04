@@ -59,7 +59,7 @@ group :development do
   gem 'pry-rails'
 end
 gem 'sidekiq'
-gem 'sidekiq-cron', '~> 1.1'
+gem 'sidekiq-cron', '~> 2.2'
 gem 'csv'
 gem 'devise'
 gem 'rotp'
