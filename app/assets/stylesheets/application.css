@@ -8,3 +8,23 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+ .pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination a, .pagination span {
+  padding: 8px 12px;
+  margin: 2px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+
+.pagination .current {
+  background-color: #6c5ce7;
+  color: white;
+}
+

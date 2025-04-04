@@ -1,0 +1,25 @@
+h1 Orders Management
+
+= form_with url: orders_path, method: :get, local: true do |f|
+  = f.label :state, "Filter by Status:"
+  = f.select :state, Order.order_states.keys.map { |s| [s.humanize, s] }, include_blank: "All"
+  = f.submit "Filter", class: "btn btn-primary"
+
+table.table
+  thead
+    tr
+      th ID
+      th Customer
+      th Total Price
+      th Status
+      th Placed At
+  tbody
+    - @orders.each do |order|
+      tr
+        td = order.id
+        td = order.customer.name
+        td = number_to_currency(order.total_price)
+        td = order.order_state.titleize
+        td = l(order.placed_at, format: :short)
+
+= paginate @orders
