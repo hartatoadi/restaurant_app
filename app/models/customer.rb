@@ -1,6 +1,7 @@
 class Customer < ApplicationRecord
   #Relationships
   has_many :orders, dependent: :destroy
+  has_many :reservations, dependent: :destroy
 
   #Validations
   validates :name, presence: true
